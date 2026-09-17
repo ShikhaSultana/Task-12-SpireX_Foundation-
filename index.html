@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ShopEase — a modern shopping cart where you can add or remove products, manage quantities, and see the total price update automatically." />
+  <title>ShopEase — Modern Shopping Cart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="nav">
+      <div class="logo">
+        <span class="mark" aria-hidden="true">🛍️</span>
+        ShopEase
+      </div>
+      <span class="spacer"></span>
+      <button class="icon-btn" id="themeToggle" type="button" role="switch"
+              aria-checked="false" aria-label="Toggle dark mode">
+        <span id="themeIcon" aria-hidden="true">🌙</span>
+      </button>
+      <button class="icon-btn" id="cartToggle" type="button" aria-label="View cart">
+        <span aria-hidden="true">🛒</span>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+    </nav>
+  </header>
+
+  <div class="wrap">
+    <!-- Hero -->
+    <section class="hero">
+      <h1>Everything you love, in one cart.</h1>
+      <p>Browse the collection, add your favourites, adjust quantities, and watch your total update instantly — all in a clean, modern experience.</p>
+      <span class="pill">✨ Free shipping on orders over $100</span>
+    </section>
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <label class="search">
+        <span aria-hidden="true">🔍</span>
+        <input type="text" id="searchInput" placeholder="Search products…" aria-label="Search products" />
+      </label>
+      <div class="filters" id="filters" role="group" aria-label="Filter by category"></div>
+    </div>
+
+    <!-- Products -->
+    <section>
+      <div class="sec-head">
+        <h2>Featured Products</h2>
+        <span class="count" id="prodCount"></span>
+      </div>
+      <div class="products" id="products"></div>
+    </section>
+
+    <!-- Cart panel -->
+    <aside class="cart-panel" id="cartPanel" aria-label="Shopping cart">
+      <div class="cart-head">
+        <h2>🛒 Your Cart</h2>
+        <button class="clear" id="clearBtn" type="button">Clear all</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="summary">
+        <div class="row"><span>Subtotal</span><span class="v" id="subtotal">$0.00</span></div>
+        <div class="row discount"><span>Discount</span><span class="v" id="discount">−$0.00</span></div>
+        <div class="row"><span>Shipping</span><span class="v" id="shipping">$0.00</span></div>
+        <div class="row"><span>Tax (8%)</span><span class="v" id="tax">$0.00</span></div>
+        <div class="promo">
+          <input type="text" id="promoInput" placeholder="Promo code (try SAVE10)" aria-label="Promo code" />
+          <button id="promoBtn" type="button">Apply</button>
+        </div>
+        <div class="row total"><span>Total</span><span class="v" id="total">$0.00</span></div>
+        <button class="checkout" id="checkoutBtn" type="button" disabled>Checkout</button>
+        <p class="secure">🔒 Secure checkout · 30-day returns</p>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site">
+    ShopEase demo store · Prices in USD · No personal information collected
+  </footer>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
